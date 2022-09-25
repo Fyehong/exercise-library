@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30133:VCServicingVersionATL=14.29.30136:VCServicingVersionCrtHeaders=14.29.30136:VCServicingVersionCompilers=14.29.30136:TargetPlatformVersion=10.0.19041.0:
+Debug|Win32|D:\GitHub\warehouse0\求两数公约数\|
+=======
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30133:VCServicingVersionATL=14.29.30136:VCServicingVersionCrtHeaders=14.29.30136:VCServicingVersionCompilers=14.29.30136:TargetPlatformVersion=10.0.19041.0:
+Debug|Win32|D:\GitHub\warehouse0\求两数公约数\|
+>>>>>>> a15ab819a388aefe16f7ace6687e64a13cc105bf
