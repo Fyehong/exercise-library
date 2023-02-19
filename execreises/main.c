@@ -1,39 +1,61 @@
 #define _CRT_SECURE_NO_WARNINGS
-
-//求第n个斐波那契数
-//#include<stdio.h>
-//int fib(int x)
+#include<stdio.h>
+////用冒泡排序，将数组从小到大排序
+//
+//void bubble_sort(int arr[],int sz)//等价于void bubble_sort(int *arr,int sz)
 //{
-//	if (x > 2)
+//	int j = 0;
+//	for (j = 0; j < sz-1; j++)
 //	{
-//		return fib(x - 1) + fib(x - 2); 
+//		int flag = 0;
+//		int i = 0;
+//		for (i = 0; i < sz - 1; i++)
+//		{
+//			if (arr[i] > arr[i + 1])
+//			{
+//				flag = 1;
+//				int tmp = arr[i];
+//				arr[i] = arr[i + 1];
+//				arr[i + 1] = tmp;
+//			}
+//		}
+//		if (0 == flag)
+//		{
+//			break;
+//		}
 //	}
-//	return 1;
 //}
-//重复计算，效率低，换种方法
-
-int fib(int x)
-{
-	int a = 1;
-	int b = 1;
-	int c = 1;
-	while (x > 2)
-	{
-		c = a + b;
-		a = b;
-		b = c;
-		x--;
-	}
-	return c;
-}
+//int main()
+//{
+//	int arr[] = { 5,6,7,8,9,4,3,2,1,0 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int i = 0;
+//	bubble_sort(arr,sz);
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+//
+//
+////数组名，一般情况下表示的都是数组首元素的地址，有两种情况除外：
+////1>.在sizeof(数组名)函数中，数组名表示的是整个数组，sizeof(数组名)计算的是整个数组的大小；
+////1>.在用&取数组地址时，如&数组名，数组名表示的是整个数组，取的是整个数组的地址；
+//
 
 
 int main()
 {
-	int n = 0;
-	scanf("%d", &n);
-	int ret = fib(n);
-	printf("%d\n", ret);
-	return 0;
+	int arr[4][5] = { {1,2,3,4,5},6,7,8,9,10,{11,12,13,14},15,16,17 };
+	int i = 0;
+	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+	{
+		int j = 0;
+		for (j = 0; j < sizeof(arr[0]) / sizeof(arr[0][0]); j++)
+		{
+			printf("arr[%d][%d]是：%-6d ", i, j, arr[i][j]);
+		}
+		printf("\n");
+	}
 }
-
