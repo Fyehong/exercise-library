@@ -1,24 +1,56 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-//喝汽水，1瓶汽水1元，2个空瓶可以换一瓶汽水，给20元，可以多少汽水（编程实现）
-int how_bottle(int money)
-{
-	int count = money / 1;
-	int ret = 0;
-	int cou = count;
-	while (count >= 2)
-	{
-		ret += count / 2;
-		count = count / 2 + count % 2;
-	}
-	return ret + cou;
-}
+//调整数组使奇数位全部都位于偶数位前面
 
+void ji_ou(int* a,int sz)
+{
+	int left = 1;//做奇数位起点
+	int right = sz-1;//做偶数位起点
+	int temp = 0;
+	if (0 == sz % 2)
+	{
+		right = right - 1;
+		while (left < right)
+		{
+			temp = *(a + right);
+			*(a + right) = *(a + left);
+			*(a + left) = temp;
+			left += 2;
+			right -= 2;
+		}
+	}
+	else
+	{
+		while (left < right)
+		{
+			temp = *(a + right);
+			*(a + right) = *(a + left);
+			*(a + left) = temp;
+			left += 2;
+			right -= 2;
+		}
+	}
+}
 int main()
 {
-	int money = 20;
-	int a_steamwater_price = 1;
-	int two_empty_bottle = 1;
-	int count = how_bottle(money);
-	printf("%d\n", count);
+	int i = 0;
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int sz = 10;
+	/*for (i = 0; i < 10; i++)
+	{
+		scanf("%d ", &arr[i]);
+		sz++;
+	}*/
+	ji_ou(arr,sz);
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	return 0;
 }
+
+
+
+
+
+
